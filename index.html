@@ -5,22 +5,64 @@
     <link rel="StyleSheet" href="style.css" type="text/css" media="all">
     <meta charset="UTF-8">
     <title>SAR2Earth Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: gray;
+        }
+
+        .authors {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .links {
+            margin-top: 40px;
+        }
+
+        .link-button {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .link-button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 
 <body>
-    <br>
-    <div class="center-div">
-        <span style="font-size:50px">SAR2Earth Dataset</span>
-    </div>
 
-    <div class="center-div" style="margin-top: 20px;">
-        <h3>Code Repository</h3>
-        <a href="https://github.com/SAR2Earth" target="_blank">GitHub Repository</a>
-    </div>
+    <div class="title">SAR2Earth: A SAR-to-EO Translation Dataset for Remote Sensing Applications</div>
+<!--     <div class="subtitle">Satellite Image Translation from SAR to EO</div> -->
 
-    <div class="center-div" style="margin-top: 20px;">
-        <h3>Hugging Face Dataset</h3>
-        <a href="https://huggingface.co/SAR2Earth" target="_blank">Access the Dataset on Hugging Face</a>
+<!--     <div class="authors">
+        Your Name*, Collaborator Name†<br>
+        Equal *authorship and †advising contributions
+    </div> -->
+
+    <div class="links">
+        <a href="https://github.com/SAR2Earth" class="link-button" target="_blank">GitHub</a>
+        <a href="https://huggingface.co/SAR2Earth" class="link-button" target="_blank">Hugging Face</a>
     </div>
 
 </body>
