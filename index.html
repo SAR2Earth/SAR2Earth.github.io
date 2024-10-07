@@ -1,89 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAR2Earth: A SAR-to-EO Translation Dataset</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight: 300;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0; /* Light background color */
-            color: #333;
-            text-align: center;
-        }
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SAR2Earth: A SAR-to-EO Translation Dataset for Remote Sensing Applications">
+  <meta name="keywords" content="diffusion, nerf">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAR2Earth: A SAR-to-EO Translation Dataset for Remote Sensing Applications</title>
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 900px;
-        }
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
 
-        .title {
-            font-size: 48px;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
 
-        .subtitle {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .links {
-            margin-top: 20px;
-        }
-
-        .link-button {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 0 10px;
-        }
-
-        .link-button:hover {
-            background-color: #0056b3;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: #e0e0e0;
-            padding: 15px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            color: #333;
-        }
-
-        .navbar a {
-            color: #333;
-            text-decoration: none;
-            padding: 0 15px;
-        }
-
-        .navbar a:hover {
-            color: #007bff;
-        }
-    </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .video-margin {
+      margin-bottom: 20px; 
+    }
+  </style>
+  <style>
+  .reduce-space {
+    margin-bottom: -100px;  
+  }
+</style>
 </head>
-
 <body>
 
-    <div class="navbar">
+<section class="hero">
+    <div class="reduce-space">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span class='main-title'>SAR2Earth:</span><br><span class="sub-title"> A SAR-to-EO Translation Dataset for Remote Sensing Applications</span></h1>
+            
+            
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                    <span class="link-block">
+                    <a href="ICLR2025_sar2earth.pdf"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                    </a>
+                    </span>
+
+                    <span class="link-block">
+                    <a href="https://github.com/ICLR2025_submisson/SAR2Earth"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                    </span>
+
+                    <span class="link-block">
+                    <a href="https://huggingface.co/SAR2Earth"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="far fa-images"></i>
+                        </span>
+                        <span>Dataset</span>
+                        </a>
+                    </span>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Electro-optical (EO) images are essential to a wide range of remote sensing applications. 
+                With the advent of data-driven models, the efficiency of EO image analysis has significantly improved, enabling faster and more effective outcomes in these applications. 
+                However, EO images have inherent limitations—they cannot penetrate cloud cover and are unable to capture imagery at night. 
+                To overcome these challenges, synthetic aperture radar (SAR) images are employed, as they can operate effectively regardless of weather conditions or time of day. 
+                Despite this advantage, SAR images come with their own difficulties: they are affected by speckle noise, complicating analysis, and existing algorithms developed for EO imagery are not directly transferable to SAR data. 
+                To address these issues, we introduce SAR2Earth, a benchmark dataset specifically designed for SAR-to-EO translation. 
+                By translating SAR images into EO-like representations, SAR2Earth allows the extensive range of algorithms developed for EO imagery to be applied effectively to SAR data. 
+                The dataset consists of 18 spatially aligned pairs of SAR and EO images, collected from 8 distinct regions encompassing both urban and rural. 
+                We provide comprehensive evaluations, detailed model analyses, and extensive experimental results. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              Website source based on <a href="https://github.com/nerfies/nerfies.github.io">this source code</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+    <!-- <div class="navbar">
         <div><a href="#">Home</a></div>
         <div>
             <a href="#">Dataset Description</a>
@@ -103,4 +147,4 @@
 
 </body>
 
-</html>
+</html> -->
