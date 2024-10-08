@@ -136,14 +136,32 @@
       </div>
       <!--/ Abstract. -->
     </div>
-</section>
 
-<section class="section">
   <div class="container is-max-desktop">
     <div class="rows is-centered">
+      <div class="row">
+        <h2 class="title is-3 has-text-centered">Metadata Description</h2>
+        <div class="content has-text-justified">
+          <p>
+            Each image pair in the SAR2Earth dataset is accompanied by metadata that provides essential geospatial and temporal information. 
+            This metadata allows users to analyze the spatial resolution and capture time differences between the SAR and EO images, 
+            enhancing the dataset's applicability for time-sensitive and location-specific research.
+          </p>
+
+          <p>The metadata includes the following fields:</p>
+            <ul>
+              <li><strong>img_id:</strong> Unique identifier for each image pair.</li>
+              <li><strong>lon:</strong> Longitude coordinate of the image center.</li>
+              <li><strong>lat:</strong> Latitude coordinate of the image center.</li>
+              <li><strong>gsd:</strong> Ground Sampling Distance (GSD) indicating the spatial resolution in meters.</li>
+              <li><strong>sar_year, sar_month, sar_day:</strong> Date of the SAR image capture.</li>
+              <li><strong>eo_year, eo_month, eo_day:</strong> Date of the EO image capture.</li>
+            </ul>
+        </div>
+      </div>
+      <div class="row">
       <h2 class="title is-3 has-text-centered">Metadata Example</h2>
       <div class="content has-text-justified">
-        <p>Each image pair in the SAR2Earth dataset is accompanied by metadata that provides essential geospatial and temporal information. This metadata includes:</p>
         <table class="table is-striped is-hoverable is-fullwidth">
           <thead>
             <tr>
@@ -186,6 +204,7 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 
